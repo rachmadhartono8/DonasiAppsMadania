@@ -2,8 +2,10 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/abril_fatface</item>
+        <item>@font/arbutus_slab</item>
         <item>@font/archivo_black</item>
         <item>@font/carter_one</item>
         <item>@font/chango</item>
+        <item>@font/merienda_one</item>
     </array>
 </resources>

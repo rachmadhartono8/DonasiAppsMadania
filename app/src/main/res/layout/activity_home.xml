@@ -43,6 +43,8 @@
                 android:layout_marginEnd="8dp"
                 android:text="Madania Donasi App"
                 android:textAlignment="center"
+                android:textStyle="bold"
+                android:fontFamily="@font/arbutus_slab"
                 android:textColor="#fff"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -71,12 +73,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Menu"
+                    android:fontFamily="@font/arbutus_slab"
+                    android:textColor="@color/white"
                     android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
                     android:text="Jadilah Orang Baik untuk adek adek panti"
                     android:textSize="16sp" />
 
@@ -99,19 +105,21 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:background="@color/colorPrimary"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/img_shodaqoh"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:background="@drawable/shodaqoh" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:text="Shodaqoh"
+                            android:textColor="@color/white"
                             android:textSize="16sp" />
 
                     </LinearLayout>
@@ -122,19 +130,22 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:background="@color/colorPrimary"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/zakat"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:src="@drawable/zakat"
+                            android:background="@color/white"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:text="Zakat"
+                            android:textColor="@color/white"
                             android:textSize="16sp" />
 
                     </LinearLayout>
@@ -145,20 +156,23 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:background="@color/colorPrimary"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/wakaf"
                             android:layout_width="64dp"
                             android:layout_height="64dp"
-                            android:src="@drawable/ic_launcher_background" />
+                            android:background="@color/white"
+                            android:src="@drawable/wakaf"
+                            />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:text="Wakaf"
-
+                            android:textColor="@color/white"
                             android:textSize="16sp" />
 
                     </LinearLayout>
@@ -175,6 +189,8 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
                 android:text="Info Donatur"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -186,7 +202,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="4dp"
-                android:text="Laporan Donasi Bulanan Yayasan"
+                android:textColor="@color/white"
+                android:background="@color/colorPrimary"
+                android:text="Laporan Donasi Bulanan Yayasan Madania"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -194,8 +212,9 @@
             <HorizontalScrollView
                 android:scrollbars="none"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="24dp"
+                android:background="@color/colorPrimary"
                 android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -207,37 +226,37 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:src="@drawable/ic_launcher_background"
-                        android:layout_marginRight="24dp"
                         android:layout_width="227dp"
-                        android:layout_height="98dp" />
+                        android:layout_height="98dp"
+                        android:layout_marginRight="24dp"
+                        android:background="@color/white" />
 
                     <ImageView
                         android:layout_width="227dp"
                         android:layout_height="98dp"
                         android:layout_marginRight="24dp"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:background="@color/white" />
 
                     <ImageView
-                        android:src="@drawable/ic_launcher_foreground"
+                        android:layout_marginRight="24dp"
+                        android:background="@color/white"
+                        android:layout_width="227dp"
+                        android:layout_height="98dp" />
+
+                    <ImageView
+                        android:background="@color/white"
                         android:layout_marginRight="24dp"
                         android:layout_width="227dp"
                         android:layout_height="98dp" />
 
                     <ImageView
-                        android:src="@drawable/ic_launcher_background"
+                        android:src="@color/white"
                         android:layout_marginRight="24dp"
                         android:layout_width="227dp"
                         android:layout_height="98dp" />
 
                     <ImageView
-                        android:src="@drawable/ic_launcher_foreground"
-                        android:layout_marginRight="24dp"
-                        android:layout_width="227dp"
-                        android:layout_height="98dp" />
-
-                    <ImageView
-                        android:src="@drawable/ic_launcher_background"
+                        android:background="@color/white"
                         android:layout_marginRight="24dp"
                         android:layout_width="227dp"
                         android:layout_height="98dp" />
