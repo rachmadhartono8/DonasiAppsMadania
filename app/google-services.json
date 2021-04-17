@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "220233009331",
+    "project_id": "donasiappsmadania",
+    "storage_bucket": "donasiappsmadania.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220233009331:android:64177cd4b9b0ea78b808c6",
+        "android_client_info": {
+          "package_name": "com.hartonostudio.donasiappsmadania"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220233009331-0pr45vgmt4a42v812u759dit95fdna98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyo7hTMWA20XyjXNuRb4niEruWkISjx-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "220233009331-0pr45vgmt4a42v812u759dit95fdna98.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
