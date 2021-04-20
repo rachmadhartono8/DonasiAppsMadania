@@ -9,17 +9,12 @@ import android.widget.LinearLayout;
 
 import com.hartonostudio.donasiappsmadania.Donasi.ShodaqohActivity;
 import com.hartonostudio.donasiappsmadania.Donasi.WakafActivity;
-import com.hartonostudio.donasiappsmadania.Donasi.ZakatActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
 
     LinearLayout btn_shodaqoh, btn_zakat,
             btn_wakaf;
-
-    //String USERNAME_KEY = "usernamekey";
-    //String username_key = "";
-    //String username_key_new = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +58,3 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 }
-    //public void getUsernameLocal(){
-      //  SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-        //username_key_new = sharedPreferences.getString(username_key, "");
-   // }
-
-//}
