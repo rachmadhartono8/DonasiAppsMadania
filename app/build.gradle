@@ -2,11 +2,12 @@ plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
 }
+//apply plugin: 'com.android.aplication'
 
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
-
+    flavorDimensions "mode"
     defaultConfig {
         applicationId "com.hartonostudio.donasiappsmadania"
         minSdkVersion 22
@@ -16,6 +17,19 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    //productFlavour {
+        //sandbox {
+          //  applicationId = "com.hartonostudio.donasiappsmadania"
+            //resValue "String", "app_name", "donasiappsmadania"
+            //buildConfigField "string", "MERCHANT_BASE_URL", "\"https://donasipps.herokuapp.com/\""
+            //buildConfigField "string", "MERCHANT_CLIENT_KEY", "\"SB-Mid-client-MsITeWtAulluNqu6\""
+
+        //}
+        //production{
+
+
+        //}
+   // }
 
     buildTypes {
         release {
@@ -29,11 +43,14 @@ android {
     }
 }
 
+
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
-    implementation 'com.midtrans:uikit:1.26.0-SANDBOX' // change the number to the latest version
+    implementation 'com.midtrans:uikit:1.26.0-SANDBOX' // change the number to the latest version // sanbox
+
+    //implementation 'com.midtrans:uikit:1.26.0' // change the number to the latest version// production
 
     implementation 'com.google.android.material:material:1.2.0-alpha01'
 

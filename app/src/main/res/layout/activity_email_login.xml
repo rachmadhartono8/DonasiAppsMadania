@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin.LoginAdmin"
     android:orientation="vertical"
-    android:gravity="center">
-
+    android:gravity="center"
+    tools:context=".RegLogin.EmailLoginActivity">
 
     <TextView
-        android:text="LOGIN ADMIN"
+        android:text="LOGIN USER"
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_width="140dp"
@@ -27,7 +26,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="30dp"
         android:layout_gravity="center_horizontal"
         app:layout_constraintBottom_toTopOf="@+id/login_mail"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,9 +34,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/icon_person_admin" />
 
-
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/login_mail"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -49,8 +47,10 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/login_password"
             android:layout_width="265dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -77,7 +77,8 @@
             android:hint="Password"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
         <cyd.awesome.material.AwesomeText
             android:id="@+id/awesome"
@@ -94,21 +95,31 @@
     </LinearLayout>
 
     <Button
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="Sign In"
-        android:id="@+id/btn_masuk"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/background_btn_style"/>
-
-    <Button
-        android:id="@+id/btn_daftar"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:id="@+id/loginBtn"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/background_btn_style"
-        android:text="Sign up"
-        android:visibility="invisible" />
+        android:text="Login"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_password" />
 
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/loginBtn"
+        app:layout_constraintEnd_toEndOf="@+id/loginBtn"
+        app:layout_constraintStart_toStartOf="@+id/loginBtn"
+        app:layout_constraintTop_toTopOf="@+id/loginBtn" />
 
 </LinearLayout>

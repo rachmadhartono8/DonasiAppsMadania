@@ -3,72 +3,37 @@ package com.hartonostudio.donasiappsmadania;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.hartonostudio.donasiappsmadania.RegLogin.LoginHomeActivity;
 
 public class SplashActivity extends AppCompatActivity {
-    Animation app_splash, btt;
-    ImageView app_logo;
-    TextView app_subtitle;
 
-    String USERNAME_KEY = "usernamekey";
-    String username_key = "";
-    String username_key_new = "";
+    private int waktu_loading=2000;
+    private FirebaseAuth mAuth, mAuthAdmin;
+
+    //4000=4 detik
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        //Load animation
-        app_splash = AnimationUtils.loadAnimation(this, R.anim.app_splash);
-        btt = AnimationUtils.loadAnimation(this, R.anim.btt);
+        mAuth = FirebaseAuth.getInstance();
+        mAuthAdmin = FirebaseAuth.getInstance();
 
-        //Load element
-        app_logo = findViewById(R.id.applogo);
-        app_subtitle = findViewById(R.id.app_subtitle);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
 
-        //Run animation
-        app_logo.startAnimation(app_splash);
-        app_subtitle.startAnimation(btt);
+                //berpindah ke login activity
+                Intent home = new Intent(SplashActivity.this, LoginHomeActivity.class);
+                startActivity(home);
+                finish();
 
-        getUsernameLocal();
-    }
-
-    public void getUsernameLocal()
-    {
-        SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-        username_key_new = sharedPreferences.getString(username_key, "");
-        if (username_key_new.isEmpty()){
-            //Setting timer untuk 2 detik
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    //Merubah activity ke activity lain
-                    Intent gogetstarted = new Intent(SplashActivity.this, StartActivity.class);
-                    startActivity(gogetstarted);
-                    finish();
-                }
-            }, 2000); // 2000 ms = 2 s
-        }
-        else {
-            //Setting timer untuk 2 detik
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    //Merubah activity ke activity lain
-                    Intent gogethome = new Intent(SplashActivity.this, HomeActivity.class);
-                    startActivity(gogethome);
-                    finish();
-                }
-            }, 2000); // 2000 ms = 2 s
-        }
+            }
+        },waktu_loading);
     }
 }

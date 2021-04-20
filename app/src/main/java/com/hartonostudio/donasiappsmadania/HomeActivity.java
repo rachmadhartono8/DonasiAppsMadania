@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 
 import com.hartonostudio.donasiappsmadania.Donasi.ShodaqohActivity;
 import com.hartonostudio.donasiappsmadania.Donasi.WakafActivity;
+import com.hartonostudio.donasiappsmadania.midtrans.Midtrans;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -41,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
         btn_zakat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gotozakat = new Intent(HomeActivity.this, ZakatActivity.class);
+                Intent gotozakat = new Intent(HomeActivity.this, Midtrans.class);
                 gotozakat.putExtra("jenis_tiket", "Tori");
                 startActivity(gotozakat);
             }
