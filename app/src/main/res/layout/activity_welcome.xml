@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#27ACBD"
+    android:gravity="center"
+    tools:context=".WelcomeActivity">
+
+    <ImageView
+        android:id="@+id/imgWelcome"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="50dp"
+        app:srcCompat="@drawable/berbagii"
+        android:layout_marginTop="100dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/selamatDatang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selamat Datang"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#FFFF"
+        tools:ignore="MissingConstraints"
+        android:layout_marginLeft="70dp"
+        android:layout_below="@+id/imgWelcome"/>
+
+    <TextView
+        android:id="@+id/textViewBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/selamatDatang"
+        android:layout_marginLeft="55dp"
+        android:text="Aplikasi Donasi Madania"
+        android:textColor="#FFFF"
+        android:textSize="16sp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_welcome"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewBottom"
+        android:layout_marginTop="188dp"
+        android:textColor="#FDFDF6"
+        android:background="@drawable/button_bootstrap_rounded_primary"
+        android:text="Mulai" />
+
+
+</RelativeLayout>

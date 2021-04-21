@@ -6,7 +6,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
 android:padding="10dp"
-tools:context=".Donasi.WakafActivity">
+tools:context=".Menu.WakafActivity">
 
 <ScrollView
     android:id="@+id/scroll"

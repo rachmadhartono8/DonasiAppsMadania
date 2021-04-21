@@ -1,128 +1,206 @@
 package com.hartonostudio.donasiappsmadania.RegLogin;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.hartonostudio.donasiappsmadania.HomeActivity;
+import com.google.firebase.auth.GoogleAuthProvider;
+import com.hartonostudio.donasiappsmadania.Admin.AdminActivityy;
+import com.hartonostudio.donasiappsmadania.MainActivity;
 import com.hartonostudio.donasiappsmadania.R;
 
-import cyd.awesome.material.AwesomeText;
-import cyd.awesome.material.FontCharacterMaps;
+public class LoginActivity extends AppCompatActivity {
 
-public class LoginActivity extends AppCompatActivity  {
-    private EditText userMail, userPassword;
-    private Button btnLogin;
-    private ProgressBar loginProgress;
+    ImageView img1;
+
+    private static final String TAG = "Login" ;
+    private GoogleSignInClient mGoogleSignInClient;
+    private final static int RC_SIGN_IN = 123;
+
+    Button btn_login, btn_number;
     private FirebaseAuth mAuth;
-    private Intent HomeActivity;
-    private ImageView loginPhoto;
-    private AwesomeText awesomeText;
-    private boolean pwd_status = true;
+    private GoogleSignInOptions gso;
+
+    private boolean doubleBacktoExit = false;
+
+    private TextView sayaadmin, btn_reg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        loginPhoto = findViewById(R.id.login_photo);
-        userMail = findViewById(R.id.login_mail);
-        userPassword = findViewById(R.id.login_password);
+        img1 = findViewById(R.id.img1);
 
-        loginProgress = findViewById(R.id.login_progress);
-        loginProgress.setVisibility(View.GONE);
+        sayaadmin =findViewById(R.id.sayaadmin);
+        Admin();
 
-        mAuth = FirebaseAuth.getInstance();
-        HomeActivity = new Intent(this, com.hartonostudio.donasiappsmadania.HomeActivity.class);
-
-        btnLogin = findViewById(R.id.loginBtn);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                final String mail = userMail.getText().toString();
-                final String password = userPassword.getText().toString();
-
-                if (mail.isEmpty() || password.isEmpty()) {
-                    showMessage("Please Verify All Field");
-                } else {
-                    signIn(mail, password);
-                }
-            }
-        });
-
-        awesomeText = findViewById(R.id.awesome);
-        awesomeText.setOnClickListener(new View.OnClickListener() {
+        btn_number = findViewById(R.id.btn_phonenumber);
+        btn_number.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (pwd_status){
-                    userPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    pwd_status = false;
-                    awesomeText.setMaterialDesignIcon(FontCharacterMaps.MaterialDesign.MD_VISIBILITY);
-                    userPassword.setSelection(userPassword.length());
-                }else {
-                    userPassword.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD | InputType.TYPE_CLASS_TEXT);
-                    pwd_status = true;
-                    awesomeText.setMaterialDesignIcon(FontCharacterMaps.MaterialDesign.MD_VISIBILITY_OFF);
-                    userPassword.setSelection(userPassword.length());
-                }
+                Intent intent = new Intent(LoginActivity.this, PhoneLoginActivity.class);
+                startActivity(intent);
             }
         });
-    }
 
-    private void signIn(String mail, String password) {
-        mAuth.signInWithEmailAndPassword(mail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
+        btn_reg = findViewById(R.id.btn_reg);
+        btn_reg.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    loginProgress.setVisibility(View.VISIBLE);
-                    updateUI();
-                } else {
-                    showMessage(task.getException().getMessage());
-                    loginProgress.setVisibility(View.INVISIBLE);
-                }
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
             }
         });
-    }
-    private void updateUI() {
-        startActivity(HomeActivity);
-        finish();
+
+
+        btn_login = findViewById(R.id.btn_login);
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, EmailLoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        mAuth = FirebaseAuth.getInstance();
+
+        createRequest();
+
+        findViewById(R.id.sign_in_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signIn();
+            }
+        });
+
+
     }
 
-    private void showMessage(String text) {
-        Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
+    //On click listener to tv login to move to login activity
+    public void Admin() {
+        sayaadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, AdminActivityy.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+
         FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null) {
-            //user is already connected  so we need to redirect him to home page
-            updateUI();
+        if(user!=null){
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class );
+            startActivity(intent);
+            finish();
         }
     }
+
+    private void createRequest() {
+        // konfigurasi akun google yang ada dihp
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+        // Build a GoogleSignInClient with the options specified by gso.
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+    }
+
+    private void signIn() {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+
+        //hasil nek stlh peluncuran intent google signin
+        if (requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                //Google Sign In was successful, authenticate with Firebase
+                //google berhasil login menggunakan auth firebase
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
+                firebaseAuthWithGoogle(account.getIdToken());
+            } catch (ApiException e) {
+
+                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void firebaseAuthWithGoogle(String idToken) {
+
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            //sign in sukses, lalu mengupdate ui selanjutnya stlh login
+                            Log.d(TAG, "signInWithCredential:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class );
+                            startActivity(intent);
+                            finish();
+
+                        }
+                    }
+                });
+    }
+
+
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBacktoExit){
+            finishAffinity();
+            finish();
+        }
+        this.doubleBacktoExit = true;
+        Toast.makeText(this, "Tekan Lagi Untuk Keluar",Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBacktoExit = false;
+            }
+        }, 2000);
+    }
+
+
+
 }
-
-
-
-
-
 

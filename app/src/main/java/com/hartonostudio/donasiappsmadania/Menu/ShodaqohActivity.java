@@ -1,4 +1,4 @@
-package com.hartonostudio.donasiappsmadania.Donasi;
+package com.hartonostudio.donasiappsmadania.Menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 

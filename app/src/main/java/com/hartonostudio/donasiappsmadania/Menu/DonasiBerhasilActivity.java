@@ -1,4 +1,4 @@
-package com.hartonostudio.donasiappsmadania.Donasi;
+package com.hartonostudio.donasiappsmadania.Menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.hartonostudio.donasiappsmadania.HomeActivity;
+import com.hartonostudio.donasiappsmadania.MainActivity;
 import com.hartonostudio.donasiappsmadania.R;
 
 public class DonasiBerhasilActivity extends AppCompatActivity {
@@ -48,11 +48,10 @@ public class DonasiBerhasilActivity extends AppCompatActivity {
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gotohome = new Intent(getApplicationContext(), HomeActivity.class);
+                Intent gotohome = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(gotohome);
             }
         });
-
 
     }
 }

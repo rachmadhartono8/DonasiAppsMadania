@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 public class PhoneLoginActivity extends AppCompatActivity {
 
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "LoginActivity";
 
     private ProgressBar loadingProgress;
     private Button regBtn;

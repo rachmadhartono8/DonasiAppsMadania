@@ -32,7 +32,7 @@ public class VerifyActivity extends AppCompatActivity {
         tvLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(VerifyActivity.this, LoginActivity.class);
+                Intent intent = new Intent(VerifyActivity.this, EmailLoginActivity.class);
                 startActivity(intent);
             }
         });

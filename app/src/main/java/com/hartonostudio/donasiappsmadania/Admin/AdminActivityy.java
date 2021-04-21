@@ -1,4 +1,4 @@
-package com.hartonostudio.donasiappsmadania.admin;
+package com.hartonostudio.donasiappsmadania.Admin;
 
 import android.app.ProgressDialog;
 import android.content.Intent;

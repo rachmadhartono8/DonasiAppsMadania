@@ -4,28 +4,24 @@
     package="com.hartonostudio.donasiappsmadania">
 
     <application
-        tools:replace="android:allowBackup"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
-        android:theme="@style/AppTheme">
-        <activity android:name=".midtrans.Midtrans">
-        </activity>
-        <activity android:name=".Donasi.DonasiBerhasilActivity" />
-        <activity android:name=".Donasi.KonfirmasiDonasiActivity" />
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup">
+        <activity android:name=".WelcomeActivity"></activity>
+        <activity android:name=".midtrans.Midtrans" />
+        <activity android:name=".Menu.DonasiBerhasilActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" />
-        <activity android:name=".Donasi.WakafActivity" />
-        <activity android:name=".Donasi.ShodaqohActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".RegLogin.LupasPasswordActivity" />
+        <activity android:name=".Menu.WakafActivity" />
+        <activity android:name=".Menu.ShodaqohActivity" />
         <activity android:name=".RegLogin.RegisterActivity" />
+        <activity android:name=".RegLogin.EmailLoginActivity" />
         <activity android:name=".RegLogin.LoginActivity" />
-        <activity android:name=".RegLogin.LoginHomeActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

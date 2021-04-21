@@ -1,4 +1,4 @@
-package com.hartonostudio.donasiappsmadania.admin;
+package com.hartonostudio.donasiappsmadania.Admin;
 
 public class Admins {
 

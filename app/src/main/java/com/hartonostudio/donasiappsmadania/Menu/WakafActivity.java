@@ -1,4 +1,4 @@
-package com.hartonostudio.donasiappsmadania.Donasi;
+package com.hartonostudio.donasiappsmadania.Menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.hartonostudio.donasiappsmadania.R;
 
-public class KonfirmasiDonasiActivity extends AppCompatActivity {
+public class WakafActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_konfirmasi_donasi);
+        setContentView(R.layout.activity_wakaf);
     }
 }

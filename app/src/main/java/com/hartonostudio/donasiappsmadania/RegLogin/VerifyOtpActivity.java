@@ -21,7 +21,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.hartonostudio.donasiappsmadania.HomeActivity;
+import com.hartonostudio.donasiappsmadania.MainActivity;
+//import com.hartonostudio.donasiappsmadania.MainActivity;
 import com.hartonostudio.donasiappsmadania.R;
 
 import java.util.concurrent.TimeUnit;
@@ -87,7 +88,7 @@ public class VerifyOtpActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()){
-                                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
                                     }else {
