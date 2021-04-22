@@ -60,7 +60,7 @@ public class SplashActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     //Merubah activity ke activity lain
-                    Intent gotowelcome = new Intent(SplashActivity.this, LoginActivity.class);
+                    Intent gotowelcome = new Intent(SplashActivity.this, WelcomeActivity.class);
                     startActivity(gotowelcome);
                     finish();
                 }
