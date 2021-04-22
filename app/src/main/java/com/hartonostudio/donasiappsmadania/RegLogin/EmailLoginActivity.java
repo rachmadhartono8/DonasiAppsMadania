@@ -18,7 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.hartonostudio.donasiappsmadania.MainActivity;
+import com.hartonostudio.donasiappsmadania.Menu.MainActivity;
 import com.hartonostudio.donasiappsmadania.R;
 
 import cyd.awesome.material.AwesomeText;
@@ -30,7 +30,7 @@ public class EmailLoginActivity extends AppCompatActivity  {
     private Button btnLogin;
     private ProgressBar loginProgress;
     private FirebaseAuth mAuth;
-    private Intent Lantai1Activity;
+    private Intent MainActivity;
     private ImageView loginPhoto;
     private AwesomeText awesomeText;
     private boolean pwd_status = true;
@@ -48,7 +48,7 @@ public class EmailLoginActivity extends AppCompatActivity  {
         loginProgress.setVisibility(View.GONE);
 
         mAuth = FirebaseAuth.getInstance();
-        Lantai1Activity = new Intent(this, MainActivity.class);
+        MainActivity = new Intent(this, MainActivity.class);
 
         btnLogin = findViewById(R.id.loginBtn);
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +100,7 @@ public class EmailLoginActivity extends AppCompatActivity  {
         });
     }
     private void updateUI() {
-        startActivity(Lantai1Activity);
+        startActivity(MainActivity);
         finish();
     }
 

@@ -130,18 +130,6 @@ tools:context=".RegLogin.LoginActivity">
         android:text="L o g i n"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/sayaadmin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/layoutInput"
-        android:layout_marginTop="10dp"
-        android:layout_alignParentRight="true"
-        android:padding="18dp"
-        android:text="Masuk sebagai Admin ->"
-        android:textColor="#000000"
-        android:textStyle="bold" />
 </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

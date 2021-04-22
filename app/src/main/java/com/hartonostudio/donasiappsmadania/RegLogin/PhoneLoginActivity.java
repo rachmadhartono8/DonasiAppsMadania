@@ -37,8 +37,6 @@ public class PhoneLoginActivity extends AppCompatActivity {
 
 
     private FirebaseAuth mAuth;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

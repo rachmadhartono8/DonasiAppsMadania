@@ -20,7 +20,7 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.hartonostudio.donasiappsmadania.DashboardActivity;
+import com.hartonostudio.donasiappsmadania.Menu.MainActivity;
 import com.hartonostudio.donasiappsmadania.R;
 
 public class KodeActivity extends AppCompatActivity {
@@ -97,7 +97,7 @@ public class KodeActivity extends AppCompatActivity {
         //memberi nilai pada referensi yang dituju
         myRef.child("Kode").setValue(et_otp.getText().toString());
 
-        Intent intent = new Intent(KodeActivity.this, DashboardActivity.class);
+        Intent intent = new Intent(KodeActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
 

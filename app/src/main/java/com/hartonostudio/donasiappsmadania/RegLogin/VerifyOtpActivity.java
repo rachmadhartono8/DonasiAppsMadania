@@ -21,8 +21,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.hartonostudio.donasiappsmadania.MainActivity;
-//import com.hartonostudio.donasiappsmadania.MainActivity;
+import com.hartonostudio.donasiappsmadania.Menu.MainActivity;
+//import com.hartonostudio.donasiappsmadania.Menu.MainActivity;
 import com.hartonostudio.donasiappsmadania.R;
 
 import java.util.concurrent.TimeUnit;

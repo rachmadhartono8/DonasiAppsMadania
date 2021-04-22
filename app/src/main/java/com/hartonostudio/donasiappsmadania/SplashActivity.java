@@ -60,7 +60,7 @@ public class SplashActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     //Merubah activity ke activity lain
-                    Intent gotowelcome = new Intent(SplashActivity.this, WelcomeActivity.class);
+                    Intent gotowelcome = new Intent(SplashActivity.this, LoginActivity.class);
                     startActivity(gotowelcome);
                     finish();
                 }
@@ -79,6 +79,9 @@ public class SplashActivity extends AppCompatActivity {
                         finish();
                     }
                 }, 2000); // 2000 ms = 2 s
+
+
+
             }
         }
     }

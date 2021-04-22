@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -25,8 +26,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.hartonostudio.donasiappsmadania.Admin.AdminActivityy;
-import com.hartonostudio.donasiappsmadania.MainActivity;
+import com.hartonostudio.donasiappsmadania.Menu.MainActivity;
 import com.hartonostudio.donasiappsmadania.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -52,8 +52,6 @@ public class LoginActivity extends AppCompatActivity {
 
         img1 = findViewById(R.id.img1);
 
-        sayaadmin =findViewById(R.id.sayaadmin);
-        Admin();
 
         btn_number = findViewById(R.id.btn_phonenumber);
         btn_number.setOnClickListener(new View.OnClickListener() {
@@ -99,16 +97,9 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    //On click listener to tv login to move to login activity
-    public void Admin() {
-        sayaadmin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, AdminActivityy.class);
-                startActivity(intent);
-            }
-        });
-    }
+
+
+
 
     @Override
     protected void onStart() {
@@ -192,12 +183,12 @@ public class LoginActivity extends AppCompatActivity {
         this.doubleBacktoExit = true;
         Toast.makeText(this, "Tekan Lagi Untuk Keluar",Toast.LENGTH_SHORT).show();
 
-        new Handler().postDelayed(new Runnable() {
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
                 doubleBacktoExit = false;
             }
-        }, 2000);
+        }, 3000);
     }
 
 

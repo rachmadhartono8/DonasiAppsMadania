@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_gradient_primary_blue"
-    tools:context=".MainActivity">
+    tools:context=".Menu.MainActivity">
 
     <ScrollView
         android:scrollbars="none"
@@ -267,6 +267,8 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
     </ScrollView>
 

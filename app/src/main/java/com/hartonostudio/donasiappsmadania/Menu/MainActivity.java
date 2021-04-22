@@ -1,4 +1,4 @@
-package com.hartonostudio.donasiappsmadania;
+package com.hartonostudio.donasiappsmadania.Menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,13 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.hartonostudio.donasiappsmadania.Menu.ShodaqohActivity;
-import com.hartonostudio.donasiappsmadania.Menu.WakafActivity;
+import com.hartonostudio.donasiappsmadania.R;
 import com.hartonostudio.donasiappsmadania.midtrans.Midtrans;
 
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayout btn_shodaqoh, btn_zakat,
+    private LinearLayout btn_shodaqoh, btn_zakat,
             btn_wakaf;
 
 

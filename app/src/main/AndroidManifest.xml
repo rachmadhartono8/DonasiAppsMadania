@@ -11,17 +11,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".WelcomeActivity"></activity>
+        <activity android:name=".Menu.BarActivity"></activity>
+        <activity android:name=".WelcomeActivity" />
         <activity android:name=".midtrans.Midtrans" />
         <activity android:name=".Menu.DonasiBerhasilActivity" />
+        <activity android:name=".RegLogin.LoginActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Menu.MainActivity"
             android:label="@string/title_activity_main" />
         <activity android:name=".Menu.WakafActivity" />
         <activity android:name=".Menu.ShodaqohActivity" />
         <activity android:name=".RegLogin.RegisterActivity" />
         <activity android:name=".RegLogin.EmailLoginActivity" />
-        <activity android:name=".RegLogin.LoginActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

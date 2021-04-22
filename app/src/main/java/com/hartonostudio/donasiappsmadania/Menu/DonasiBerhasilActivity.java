@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.hartonostudio.donasiappsmadania.MainActivity;
 import com.hartonostudio.donasiappsmadania.R;
 
 public class DonasiBerhasilActivity extends AppCompatActivity {
