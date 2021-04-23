@@ -29,12 +29,9 @@ public class VerifyActivity extends AppCompatActivity {
 
     //On click listener to tv login to move to login activity
     public void Login() {
-        tvLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(VerifyActivity.this, EmailLoginActivity.class);
-                startActivity(intent);
-            }
+        tvLogin.setOnClickListener(v -> {
+            Intent intent = new Intent(VerifyActivity.this, LoginActivity.class);
+            startActivity(intent);
         });
     }
 

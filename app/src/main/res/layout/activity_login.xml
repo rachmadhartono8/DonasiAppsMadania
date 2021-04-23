@@ -123,7 +123,7 @@ tools:context=".RegLogin.LoginActivity">
 
     <TextView
         android:textSize="20sp"
-        android:textColor="#fff"
+        android:textColor="#36AE3B"
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
         android:layout_below="@id/imageVIew"

@@ -20,7 +20,7 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.hartonostudio.donasiappsmadania.Menu.MainActivity;
+import com.hartonostudio.donasiappsmadania.FiturDonasi.MainActivity;
 import com.hartonostudio.donasiappsmadania.R;
 
 public class KodeActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.hartonostudio.donasiappsmadania.Menu;
+package com.hartonostudio.donasiappsmadania.FiturDonasi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
 
         btn_zakat = findViewById(R.id.btn_zakat);
@@ -54,5 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(gotowakaf);
             }
         });
+
+
     }
 }

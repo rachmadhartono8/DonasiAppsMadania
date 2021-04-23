@@ -18,7 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.hartonostudio.donasiappsmadania.Menu.MainActivity;
+import com.hartonostudio.donasiappsmadania.FiturDonasi.MainActivity;
 import com.hartonostudio.donasiappsmadania.R;
 
 import cyd.awesome.material.AwesomeText;

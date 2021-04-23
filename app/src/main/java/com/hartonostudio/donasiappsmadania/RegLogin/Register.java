@@ -18,6 +18,7 @@ public class Register {
             this.nama = nama;
         }
 
+
         public String getEmail() {
             return email;
         }
@@ -25,6 +26,7 @@ public class Register {
         public void setEmail(String email) {
             this.email = email;
         }
+
 
         public String getPassword() {
             return password;

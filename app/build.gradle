@@ -98,6 +98,12 @@ dependencies {
 
     implementation "com.github.bumptech.glide:glide:4.11.0"
     implementation 'com.orhanobut:dialogplus:1.11@aar'
+    implementation 'com.google.firebase:firebase-bom:27.1.0'
+
+    //Extended Library
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
+    implementation 'nl.joery.animatedbottombar:library:1.0.4'
 }
 
 allprojects {
