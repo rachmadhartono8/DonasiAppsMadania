@@ -2,4 +2,8 @@
 <resources>
     <item name="emblem_app" type="id" />
     <item name="intro_app" type="id" />
+    <item name="navigation" type="id" />
+    <item name="fragment_container" type="id" />
+    <item name="drawer_layout" type="id" />
+    <item name="nav_view" type="id" />
 </resources>

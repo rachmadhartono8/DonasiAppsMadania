@@ -7,9 +7,9 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_program"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:title="@string/title_program" />
 
     <item
         android:id="@+id/navigation_notifications"
@@ -19,6 +19,4 @@
         android:id="@+id/navigation_profil"
         android:icon="@drawable/ic_baseline_person_24"
         android:title="@string/title_profil"/>
-
-
 </menu>

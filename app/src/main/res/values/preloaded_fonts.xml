@@ -9,5 +9,6 @@
         <item>@font/merienda_one</item>
         <item>@font/nunito_bold</item>
         <item>@font/nunito_extrabold</item>
+        <item>@font/nunito_sans_extralight</item>
     </array>
 </resources>

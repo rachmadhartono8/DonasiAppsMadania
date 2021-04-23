@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="teal">#0c9869</color>
 
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
@@ -18,4 +19,5 @@
     <color name="colorBlackPrimary">#21272C</color>
     <color name="bgPrimary">#EDF1F8</color>
     <color name="greenPrimary">#1abc9c</color>
+    <color name="nav_color" />
 </resources>
