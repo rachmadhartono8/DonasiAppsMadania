@@ -71,6 +71,9 @@ dependencies {
 
     implementation 'com.google.android.material:material:1.2.0-alpha01'
 
+    implementation 'com.midtrans:corekit:1.21.2'
+    implementation 'com.midtrans:uikit:1.21.2'
+
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'com.google.firebase:firebase-auth:20.0.4'
     implementation 'com.google.firebase:firebase-database:19.7.0'
@@ -79,6 +82,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     implementation 'com.google.android.material:material:1.4.0-alpha02'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
@@ -104,6 +109,10 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
     implementation 'nl.joery.animatedbottombar:library:1.0.4'
+
+
+    ///sdk gojek-gopay
+    implementation "com.midtrans:gopay-checkout:0.1.5"
 }
 
 allprojects {

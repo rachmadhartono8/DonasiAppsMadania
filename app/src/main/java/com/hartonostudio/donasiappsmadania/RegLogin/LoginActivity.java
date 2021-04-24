@@ -26,7 +26,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.hartonostudio.donasiappsmadania.FiturDonasi.MainActivity;
+import com.hartonostudio.donasiappsmadania.MainActivity;
 import com.hartonostudio.donasiappsmadania.R;
 
 public class LoginActivity extends AppCompatActivity {

@@ -11,11 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
+        <activity android:name=".RegLogin.ResetPasswordActivity"></activity>
         <activity android:name=".WelcomeActivity" />
         <activity android:name=".midtrans.Midtrans" />
         <activity android:name=".FiturDonasi.DonasiBerhasilActivity" />
         <activity
-            android:name=".FiturDonasi.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/title_activity_main" />
         <activity android:name=".RegLogin.LoginActivity" />
         <activity android:name=".FiturDonasi.WakafActivity" />

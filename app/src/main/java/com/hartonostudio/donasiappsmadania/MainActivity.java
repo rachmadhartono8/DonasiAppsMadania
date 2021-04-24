@@ -1,4 +1,4 @@
-package com.hartonostudio.donasiappsmadania.FiturDonasi;
+package com.hartonostudio.donasiappsmadania;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -10,20 +10,16 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.hartonostudio.donasiappsmadania.Menu.Home.HomeFragment;
 import com.hartonostudio.donasiappsmadania.Menu.Notification.NotifictionFragment;
+import com.hartonostudio.donasiappsmadania.Menu.Profil.ProfilFragment;
 import com.hartonostudio.donasiappsmadania.Menu.Program.ProgramFragment;
-import com.hartonostudio.donasiappsmadania.R;
-import com.hartonostudio.donasiappsmadania.midtrans.Midtrans;
 
 import java.util.Objects;
 
@@ -35,7 +31,6 @@ import nl.joery.animatedbottombar.AnimatedBottomBar;
 
 
         private static final String TAG = MainActivity.class.getSimpleName();
-
         private Toolbar toolbar;
         AnimatedBottomBar animatedBottomBar;
         FragmentManager fragmentManager;
@@ -61,22 +56,27 @@ import nl.joery.animatedbottombar.AnimatedBottomBar;
             /**
              * Menu Bottom Navigation Drawer
              * */
+            animatedBottomBar = findViewById(R.id.navigation);
 
+            if (savedInstanceState == null) {
+                animatedBottomBar.selectTabById(R.id.nav_menu_home, true);
+                fragmentManager = getSupportFragmentManager();
+                HomeFragment homeFragment = new HomeFragment();
+                fragmentManager.beginTransaction().replace(R.id.fragment_container, homeFragment)
+                        .commit();
+            }
 
             animatedBottomBar.setOnTabSelectListener((lastIndex, lastTab, newIndex, newTab) -> {
                 Fragment fragment = null;
                 switch (newTab.getId()) {
-                    case R.id.navigation_home:
+                    case R.id.nav_menu_home:
                         fragment = new HomeFragment();
                         break;
-                    case R.id.navigation_program:
+                    case R.id.nav_menu_wishlist:
                         fragment = new ProgramFragment();
                         break;
-                    case R.id.navigation_notifications:
-                        fragment = new NotifictionFragment();
-                        break;
-                    case R.id.navigation_profil:
-                        fragment = new ProgramFragment();
+                    case R.id.nav_menu_signin:
+                        fragment = new ProfilFragment();
                         break;
                 }
 
@@ -147,6 +147,5 @@ import nl.joery.animatedbottombar.AnimatedBottomBar;
                 super.onBackPressed();
             }
         }
-
-}
+    }
 

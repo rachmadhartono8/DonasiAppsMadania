@@ -86,13 +86,13 @@ tools:context=".Menu.Profil.ProfilFragment">
                         android:src="@drawable/ic_gmail" />
 
                     <TextView
-                        android:id="@+id/tv_email"
+                        android:id="@+id/get_email"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="15dp"
                         android:fontFamily="@font/nunito_sans_extralight"
                         android:gravity="center_vertical"
-                        android:text="hartono@gmail.com" />
+                        android:text="Email :" />
                 </LinearLayout>
 
                 <View
@@ -117,12 +117,13 @@ tools:context=".Menu.Profil.ProfilFragment">
                         android:src="@drawable/ic_house" />
 
                     <TextView
+                        android:id="@+id/get_nama"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="15dp"
                         android:fontFamily="@font/nunito_sans_extralight"
                         android:gravity="center_vertical"
-                        android:text="Lampung, Indonesia" />
+                        android:text="Nama : " />
                 </LinearLayout>
 
                 <View
@@ -147,12 +148,13 @@ tools:context=".Menu.Profil.ProfilFragment">
                         android:src="@drawable/ic_phone" />
 
                     <TextView
+                        android:id="@+id/get_password"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="15dp"
                         android:fontFamily="@font/nunito_sans_extralight"
                         android:gravity="center_vertical"
-                        android:text="+6289 7598 3459" />
+                        android:text="Password : " />
                 </LinearLayout>
 
                 <View
@@ -167,7 +169,7 @@ tools:context=".Menu.Profil.ProfilFragment">
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:background="@android:color/transparent"
-                    android:text="Change Profile"
+                    android:text="Edit Profil"
                     android:textAllCaps="false"
                     android:textColor="@color/teal"
                     android:textSize="17sp"

@@ -13,12 +13,23 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.hartonostudio.donasiappsmadania.R;
 
 
 public class ProfilFragment extends Fragment {
+
+        private TextView GetEmail, GetNama, GetPassword;
+        private FirebaseAuth auth;
+        private FirebaseDatabase getDatabase;
+        private DatabaseReference getRefenence;
+        private String GetUserID;
 
         private Context mContext;
 
@@ -28,6 +39,8 @@ public class ProfilFragment extends Fragment {
             setHasOptionsMenu(true);
             return inflater.inflate(R.layout.fragment_profil, container, false);
         }
+
+
 
         @Override
         public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
